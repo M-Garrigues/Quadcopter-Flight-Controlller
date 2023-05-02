@@ -1,0 +1,43 @@
+[project]
+name = "quad-flight-controller"
+version = "1.0.0"
+authors = [{ name="Martin & Mathieu"},]
+description = "Early try on quadcopter flight controller, for rasberry pi."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = ["Programming Language :: Python :: 3",
+    "License :: MIT",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",]
+
+
+#================================================================
+
+[build-system]
+requires = [
+    "hatchling", # For the build part.
+    ]
+build-backend = "hatchling.build"
+
+
+[tool.black]
+line-length = 100
+
+[tool.pycln]
+all = true
+
+[tool.isort]
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 100
+multi_line_output = 3
+use_parentheses = true
+
+[tool.flake8]
+max-line-length = 100
+select = "C,E,F,W,B,B950"
+per-file-ignores = "tests/*: S101"
+
+[tool.ruff]
+line-length = 100
